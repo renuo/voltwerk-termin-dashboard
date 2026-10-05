@@ -1,0 +1,3 @@
+(^.*(?=\:)) everything from the start till ":"
+[^\ + ]     everything besides " + "
+(?<=\: ).*$ everything from the end till ": "

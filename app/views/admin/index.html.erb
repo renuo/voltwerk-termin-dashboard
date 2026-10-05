@@ -1,0 +1,30 @@
+<div class="pt-24 pl-24 flex flex-row">
+  <div class="">
+    <div class="max-w-fit">
+      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
+        <%= link_to "get ms access", new_ms_authenticate_path %>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
+        <%= link_to "get ms stuff", test_index_path %>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
+        <%= link_to "register user", new_admin_path%>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
+        <% if authenticated? %>
+          <%= button_to "Sign Out", session_path, method: :delete  %>
+        <% else %>
+          <%= link_to "Sign In", new_session_path %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="ms_response ml-5">
+    <% if @ms_response%>
+      <% response = JSON.parse(@ms_response) %>
+      <% response.each do |item| %>
+        <div> <%= item %> </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
