@@ -3,25 +3,26 @@
 
 <div class="pt-[25vh] flex flex-col content-center items-center">
   <div class="shadow-md p-6">
-    <div>
-      <%= form_with url: new_admin_path do |form| %>
-        <div class="border-2 rounded-b-md rounded-t-md">
-          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address]%><br>
-        </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2">
-          <%= form.text_field :job_title, required: true, placeholder: "a job title" %>
-        </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2">
-          <%= form.date_field :date_of_birth, required: true %>
-        </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2">
-          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 20 %><br>
-        </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2 hover:bg-gray-300 text-center">
-          <%= form.submit "Register" %>
-        </div>
-      <% end %>
-      <br>
-    </div>
+    <%= form_with url: admin_index_path do |form| %>
+      <div class="border-2 rounded-b-md rounded-t-md">
+        <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address]%><br>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2">
+        <%= form.text_field :job_title, required: true, placeholder: "a job title", value: params[:job_title] %>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2">
+        <%= form.text_field :handle, required: true, placeholder: "ju - John@user" %>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2">
+        <%= form.date_field :date_of_birth, required: true %>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2">
+        <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 20 %><br>
+      </div>
+      <div class="border-2 rounded-b-md rounded-t-md mt-2 hover:bg-gray-300 text-center">
+        <%= form.submit "Register" %>
+      </div>
+    <% end %>
+    <br>
   </div>
 </div>

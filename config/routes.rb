@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
   resource :session, only: %i[new create destroy]
   resources :passwords, param: :token
-  resources :admin, only: %i[index new] # will get create
+  resources :admin, only: %i[index new create] # will get create
   resources :dashboard, only: %i[index] # might get changed to show (for token)
   resources :ms_authenticate, only: %i[index new]
   resources :test, only: %i[index] # name will be changed
