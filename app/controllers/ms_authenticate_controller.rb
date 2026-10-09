@@ -1,5 +1,6 @@
-class MsAuthenticateController < ApplicationController
+# frozen_string_literal: true
 
+class MsAuthenticateController < ApplicationController
   def index
     tokens = exchange_code_for_tokens(params[:code])
 
@@ -7,6 +8,7 @@ class MsAuthenticateController < ApplicationController
 
     redirect_to admin_index_path
   end
+
   def new
     redirect_to microsoft_authorize_url, allow_other_host: true
   end

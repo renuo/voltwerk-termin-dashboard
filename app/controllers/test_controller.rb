@@ -1,11 +1,12 @@
+# frozen_string_literal: true
+
 class TestController < ApplicationController
   before_action :authenticated?
   def index
-
     url = "https://graph.microsoft.com/v1.0/me"
 
     if Authorization.first!.expiry < 5.minutes.from_now.to_i
-      puts "######################## refreshing ############################################ refreshing ######################"
+      Rails.logger.debug "######################## refreshing ############################################ refreshing ######################"
       refresh!(Authorization.first)
     end
 
@@ -15,9 +16,9 @@ class TestController < ApplicationController
       builder.request :authorization, "Bearer", -> { access_token }
     end
 
-    puts "@@@@@@@@@@"
-    puts "url: #{url}\n"
-    puts conn.get("").body
+    Rails.logger.debug "@@@@@@@@@@"
+    Rails.logger.debug { "url: #{url}\n" }
+    Rails.logger.debug conn.get("").body
 
     # validate_response(conn.get("").body)
 
@@ -26,7 +27,6 @@ class TestController < ApplicationController
     else
       redirect_to dashboard_index_path
     end
-
   end
 
   private
@@ -74,7 +74,5 @@ class TestController < ApplicationController
     "error" unless /(?<=: ).*$/.match?(subject)
   end
 
-  def correct_handle_concatination(handles)
-
-  end
+  def correct_handle_concatination(handles); end
 end

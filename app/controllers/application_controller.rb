@@ -2,6 +2,7 @@
 
 class ApplicationController < ActionController::Base
   include Authentication
+
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   allow_browser versions: :modern
 
@@ -12,7 +13,7 @@ class ApplicationController < ActionController::Base
     # url = "https://graph.microsoft.com/v1.0/me"
 
     if Authorization.first!.expiry < 5.minutes.from_now.to_i
-      puts "######################## refreshing ############################################ refreshing ######################"
+      Rails.logger.debug "######################## refreshing ############################################ refreshing ######################"
       refresh!(Authorization.first)
     end
 
@@ -22,9 +23,9 @@ class ApplicationController < ActionController::Base
       builder.request :authorization, "Bearer", -> { access_token }
     end
 
-    puts "@@@@@@@@@@"
-    puts "url: #{url}\n"
-    puts conn.get("").body
+    Rails.logger.debug "@@@@@@@@@@"
+    Rails.logger.debug { "url: #{url}\n" }
+    Rails.logger.debug conn.get("").body
 
     conn.get("").body
   end

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  root 'sessions#new'
+  root "sessions#new"
   resource :session, only: %i[new create destroy]
   resources :passwords, param: :token
   resources :admin, only: %i[index new create] # will get create
