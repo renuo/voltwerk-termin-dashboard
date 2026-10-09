@@ -29,3 +29,11 @@
 
 en:
   hello: "Hello world"
+  try_again: "Try again later."
+  try_a_different_email: "Try another email address or password."
+  password_reset:
+    button: "Reset your password"
+    instruction_sent: "Password reset instructions sent (if user with that email address exists)."
+    confirmation: "Password has been reset."
+    fail: "Passwords did not match."
+    expired: "Password reset link is invalid or has expired."

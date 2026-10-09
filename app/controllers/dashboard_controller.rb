@@ -1,5 +1,5 @@
-class DashboardController < ApplicationController
-  def index
+# frozen_string_literal: true
 
-  end
+class DashboardController < ApplicationController
+  def index; end
 end
