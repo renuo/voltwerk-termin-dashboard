@@ -31,6 +31,7 @@ en:
   hello: "Hello world"
   try_again: "Try again later."
   try_a_different_email: "Try another email address or password."
+  pwd_reset: "reset password"
   password_reset:
     button: "Reset your password"
     instruction_sent: "Password reset instructions sent (if user with that email address exists)."

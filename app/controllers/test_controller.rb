@@ -3,6 +3,7 @@
 class TestController < ApplicationController
   before_action :authenticated?
   before_action :refresh_token_expired?, only: :index
+
   def index
     url = "https://graph.microsoft.com/v1.0/me"
 
@@ -18,8 +19,6 @@ class TestController < ApplicationController
       redirect_to dashboard_index_path
     end
   end
-
-  private
 
   def validate_response(response)
     subject = JSON.parse(response.body)["subject"]
