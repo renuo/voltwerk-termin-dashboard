@@ -20,8 +20,8 @@
     </div>
   </div>
   <div class="ms_response ml-5">
-    <% if @ms_response%>
-      <% response = JSON.parse(@ms_response) %>
+    <% if @index%>
+      <% response = JSON.parse(@index) %>
       <% response.each do |item| %>
         <div> <%= item %> </div>
       <% end %>
