@@ -5,7 +5,6 @@ class AdminController < ApplicationController
 
   def index
     @index ||= get_resource_at("https://graph.microsoft.com/v1.0/me")
-    puts @index
   end
 
   def new; end
