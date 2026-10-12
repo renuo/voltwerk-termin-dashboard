@@ -1,0 +1,23 @@
+version: v1.0
+name: main-deploy
+
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2404
+
+blocks:
+  - name: cd
+    execution_time_limit:
+      minutes: 10
+    task:
+      secrets:
+        - name: termin-dashboard
+        - name: nctl
+      jobs:
+        - name: deploying
+          commands:
+            - gem i -q renuo-cli
+            - renuo ci setup
+            - renuo ci update-deploio-app main -p renuo-termin-dashboard
+            - renuo ci check-deploio-status main -p renuo-termin-dashboard

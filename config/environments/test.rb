@@ -56,7 +56,7 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions.
   config.action_controller.raise_on_missing_callback_actions = true
 
-  config.i18n.exception_handler = Proc.new { |exception| raise exception.to_exception }
+  config.i18n.exception_handler = proc { |exception| raise exception.to_exception }
   config.active_record.verbose_query_logs = true
 
   config.to_prepare do
