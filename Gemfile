@@ -61,6 +61,7 @@ group :development do
   gem "renuo-cli", require: false
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "letter_opener"
 end
 
 group :test do

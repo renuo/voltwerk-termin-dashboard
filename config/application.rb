@@ -10,10 +10,12 @@ require "active_record/railtie"
 require "active_storage/engine"
 require "action_controller/railtie"
 require "action_mailer/railtie"
-# require "action_mailbox/engine"
+require "action_mailbox/engine"
 require "action_text/engine"
 require "action_view/railtie"
 require "action_cable/engine"
+require "action_mailer"
+require "i18n"
 require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -38,5 +40,6 @@ module TerminDashboard
     config.time_zone = "Zurich"
     config.i18n.default_locale = :de
     # config.eager_load_paths << Rails.root.join("extras")
+    config.action_mailer.default_url_options = { host: ENV.fetch("APP_HOST"), port: ENV.fetch("APP_PORT") }
   end
 end
