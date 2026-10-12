@@ -1,0 +1,14 @@
+de:
+  hello: "Hallo Welt"
+  try_again: "Versuche nochmals später."
+  try_a_different_email: "Versuche eine andere E-mail oder Passwort."
+  pwd_reset: "Passwort zurücksetzen"
+  password_reset:
+    button: "Setze dein Passwort zurück"
+    instruction_sent: "Anleitung um das Passwort zurückzusetzen wurde gesendet (Falls die E-mail des Nutzers noch existiert)."
+    confirmation: "Passwort wurde zurückgesetzt."
+    fail: "Passwort stimmt nicht."
+    expired: "Zurücksetz-link ist nicht mehr gültig."
+  datetime:
+    distance_in_words:
+      x_minutes: "%M"

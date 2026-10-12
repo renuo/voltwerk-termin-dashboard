@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resource :session
   root "sessions#new"
   resource :session, only: %i[new create destroy]
   resources :passwords, param: :token
-  resources :admin, only: %i[index new create] # will get create
+  resources :admin, only: %i[index new create]
   resources :dashboard, only: %i[index] # might get changed to show (for token)
   resources :ms_authenticate, only: %i[index new]
   resources :test, only: %i[index] # name will be changed
