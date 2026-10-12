@@ -1,13 +1,11 @@
-# frozen_string_literal: true
-
 class AdminController < ApplicationController
   before_action :authenticated?
 
   def index
-    @index ||= get_resource_at("https://graph.microsoft.com/v1.0/me")
+    @ms_response ||= get_resource_at("https://graph.microsoft.com/v1.0/me")
   end
-
-  def new; end
+  def new
+  end
 
   def create
     new_user = User.new(email_address: params[:email_address],
