@@ -1,10 +1,10 @@
 # frozen_string_literal: true
+
 class TestController < ApplicationController
   before_action :authenticated?
   before_action :refresh_token_expired?, only: :index
 
   def index
-
     url = "https://graph.microsoft.com/v1.0/me"
 
     conn = Faraday.new url do |builder|
