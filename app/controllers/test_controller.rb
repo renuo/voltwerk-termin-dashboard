@@ -19,8 +19,6 @@ class TestController < ApplicationController
     end
   end
 
-  private
-
   def validate_response(response)
     subject = JSON.parse(response.body)["subject"]
 
