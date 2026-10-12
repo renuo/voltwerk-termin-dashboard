@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class PasswordsControllerTest < ActionDispatch::IntegrationTest
@@ -10,7 +12,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     post passwords_path, params: { email_address: @user.email_address }
-    assert_enqueued_email_with PasswordsMailer, :reset, args: [ @user ]
+    assert_enqueued_email_with PasswordsMailer, :reset, args: [@user]
     assert_redirected_to new_session_path
 
     follow_redirect!
@@ -61,7 +63,8 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
   end
 
   private
-    def assert_notice(text)
-      assert_select "div", /#{text}/
-    end
+
+  def assert_notice(text)
+    assert_select "div", /#{text}/
+  end
 end
