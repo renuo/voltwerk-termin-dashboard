@@ -84,4 +84,5 @@ Rails.application.configure do
   config.action_controller.action_on_unpermitted_parameters = :raise
   config.i18n.raise_on_missing_translations = :strict
   config.generators(&:apply_rubocop_autocorrect_after_generate!)
+  config.generators { |g| g.test_framework :rspec }
 end

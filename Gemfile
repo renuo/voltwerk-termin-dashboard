@@ -55,6 +55,11 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "renuocop", require: false
+
+  gem "factory_bot_rails"
+  gem "rspec-rails"
+  gem "parallel_tests"
+  gem "listen"
 end
 
 group :development do
@@ -68,10 +73,9 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-end
-
-group :development, :test do
-  gem "listen"
+  gem "shoulda-matchers"
+  gem "simplecov", require: false
+  gem "super_diff"
 end
 
 gem "tailwindcss-rails", "~> 4.6"
