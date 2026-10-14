@@ -4,6 +4,8 @@ class SyncJob < ApplicationJob
   queue_as :default
 
   def perform(*_args)
-    Rails.logger.debug "this does something"
+    # rubocop: disable Rails/Output
+    puts "this does something"
+    # rubocop: enable Rails/Output
   end
 end

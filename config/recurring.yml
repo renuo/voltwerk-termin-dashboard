@@ -13,7 +13,7 @@
 development:
   a_test_job:
     command: "SyncJob.perform_now"
-    schedule: every 5 minutes
+    schedule: every 2 seconds
 
 
 production:
