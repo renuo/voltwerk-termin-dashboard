@@ -21,7 +21,7 @@ class MsAuthenticateController < ApplicationController
     params = {
       client_id: Rails.application.credentials.dig(:microslop, :client_id),
       response_type: "code",
-      redirect_uri: ms_authenticate_index_url,
+      redirect_uri: "http://localhost:3000/ms_authenticate",
       response_mode: "query",
       scope: "User.Read"
     }
