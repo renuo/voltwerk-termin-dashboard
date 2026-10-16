@@ -6,12 +6,14 @@ class TestController < ApplicationController
 
   def index
     url = "https://graph.microsoft.com/v1.0/me"
+    # calendar_url = "https://graph.microsoft.com/v1.0/me/calendarview?startdatetime=2026-10-11T05:00:00.000Z&enddatetime=2026-10-16T12:00:00.000Z"
 
     conn = Faraday.new url do |builder|
       builder.request :authorization, "Bearer", -> { Authorization.first!.access_token }
     end
 
-    Rails.logger.debug conn.get("").body
+    puts "##### test api #########"
+    puts conn.get("").body
 
     if Current.user.admin
       redirect_to admin_index_path

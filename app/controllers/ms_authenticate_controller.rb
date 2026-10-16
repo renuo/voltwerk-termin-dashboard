@@ -51,7 +51,7 @@ class MsAuthenticateController < ApplicationController
         code: code,
         grant_type: "authorization_code",
         redirect_uri: ms_authenticate_index_url,
-        scope: "offline_access User.Read"
+        scope: "User.Read"
       )
     end
   end
@@ -65,7 +65,7 @@ class MsAuthenticateController < ApplicationController
   def save_tokens(tokens)
     Authorization.first_or_initialize.update!(
       access_token: tokens.fetch("access_token"),
-      refresh_token: tokens.fetch("refresh_token"),
+      refresh_token: nil,
       expiry: Time.current + tokens.fetch("expires_in").seconds,
       scope: tokens["scope"]
     )

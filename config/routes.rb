@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   resources :ms_authenticate, only: %i[index new]
   resources :test, only: %i[index] # name will be changed
   resources :user, only: %i[show]
+  resources :real_data
   get "up" => "rails/health#show.html.erb", as: :rails_health_check
 end
