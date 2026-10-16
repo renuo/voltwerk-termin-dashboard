@@ -1,30 +1,29 @@
-<div class="pt-24 pl-24 flex flex-row">
-  <div class="">
-    <div class="max-w-fit">
-      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
-        <%= link_to "get ms access", new_ms_authenticate_path %>
+<h1 class="hidden md:block md:text-5xl md:pt-[2.5vh] md:pb-[2.5vh] md:pl-6 md:bg-voltwerk-yellow">you are user <%= @user.handle %></h1>
+
+<div class="md:pl-8 h-full">
+  <div class="sm:hidden md:flex md:flex-row">
+
+    <div class="max-sm:flex max-sm:flex-row max-sm:bg-voltwerk-yellow">
+      <h1 class="md:hidden text-5xl pt-[2.5vh] pb-[2.5vh] pl-6">you are user <%= @user.handle %></h1>
+
+      <div class=" max-sm:flex max-sm:flex-col">
+        <div class="mb-2 h-[40%]">
+          <%= link_to "dashboard", dashboard_index_path, class: "dark-button-style hover:bg-voltwerk-yellow h-full w-full "%>
+        </div>
+
+        <div class="h-[40%]">
+          <%= link_to "Sign Out", session_path, method: :delete, class: "dark-button-style hover:bg-voltwerk-yellow h-[100%] w-[100%]"%>
+        </div>
       </div>
-      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
-        <%= link_to "get ms stuff", test_index_path %>
-      </div>
-      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
-        <%= link_to "register user", new_admin_path%>
-      </div>
-      <div class="border-2 rounded-b-md rounded-t-md mt-2 text-center p-1 hover:bg-gray-300">
-        <% if authenticated? %>
-          <%= button_to "Sign Out", session_path, method: :delete  %>
-        <% else %>
-          <%= link_to "Sign In", new_session_path %>
-        <% end %>
-      </div>
+
     </div>
-  </div>
-  <div class="ms_response ml-5">
-    <% if @index%>
-      <% response = JSON.parse(@index) %>
-      <% response.each do |item| %>
-        <div> <%= item %> </div>
-      <% end %>
-    <% end %>
+
+    <div class=" calendar-box mr-20 md:ml-2 border-2 rounded-b-md rounded-t-md w-full h-[80vh]"></div>
+
   </div>
 </div>
+
+
+
+
+

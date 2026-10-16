@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
-  allow_unauthenticated_access only: %i[new create]
+  allow_unauthenticated_access only: %i[new create destroy]
   rate_limit to: 10, within: 3.minutes, only: :create, with: lambda {
     redirect_to new_session_path, alert: t("try_again")
   }
@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
 
   def create
     if (user = User.authenticate_by(email_address: params[:email_address], password: params[:password]))
+      puts "##############"
+      puts user.id
       start_new_session_for user
       if user.admin
         redirect_to admin_index_path

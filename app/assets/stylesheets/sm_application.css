@@ -1,0 +1,5 @@
+.max-sm\:bg-voltwerk-yellow {
+    @media (width < 40rem ) {
+        background-color: var(--true-yellow-color)
+    }
+}

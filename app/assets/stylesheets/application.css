@@ -9,6 +9,59 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
+:root {
+    --true-yellow-color: #ffca22;
+    --hover-yellow: #fedb6b;
+    --true-black-color: #000;
+    --true-beige-color: #feefba;
+    --true-grey-color: #7e7e7e;
+    --true-white-color: #fff
+}
+
+
+.bg-voltwerk-yellow {
+    background-color: var(--true-yellow-color)
+}
+
+.bg-voltwerk-black {
+    background-color: var(--true-black-color)
+}
+.bg-voltwerk-beige {
+    background-color: var(--true-beige-color)
+}
+.bg-voltwerk-grey {
+    background-color: var(--true-grey-color)
+}
+.bg-voltwerk-white {
+    background-color: var(--true-white-color)
+}
+
+.input-border {
+    border: black solid 0.5px;
+}
+
+.light-button-style {
+    background-color: var(--true-yellow-color);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.dark-button-style {
+    background-color: var(--true-black-color);
+    border: var(--true-yellow-color) solid 1.5px;
+    text-align: center;
+    color: var(--true-yellow-color);
+    transition: background-color 0.25s, color 0.25s;
+}
+
+.hover\:bg-voltwerk-yellow {
+    &:hover {
+        @media (hover: hover) {
+            background-color: var(--hover-yellow);
+            color: black
+        }
+    }
+}
 
 .calendar-box {
     display: grid;

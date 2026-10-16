@@ -1,0 +1,39 @@
+.md\:bg-voltwerk-yellow  {
+    @media (width >= 48rem /* 768px */) {
+        background-color: var(--true-yellow-color)
+    }
+}
+
+.md\:bg-voltwerk-black {
+    @media (width >= 48rem /* 768px */
+    ) {
+        background-color: var(--true-black-color)
+    }
+}
+.md\:bg-voltwerk-beige {
+    @media (width >= 48rem /* 768px */
+    ) {
+        background-color: var(--true-beige-color)
+    }
+}
+
+.md\:bg-voltwerk-grey {
+    @media (width >= 48rem /* 768px */
+    ) {
+        background-color: var(--true-grey-color)
+    }
+}
+
+.md\:bg-voltwerk-white {
+    @media (width >= 48rem /* 768px */
+    ) {
+        background-color: var(--true-white-color)
+    }
+}
+
+.md\:input-border {
+    @media (width >= 48rem /* 768px */
+    ) {
+        border: black solid 0.5px;
+    }
+}

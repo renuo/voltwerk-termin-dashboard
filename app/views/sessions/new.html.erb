@@ -1,26 +1,25 @@
 <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
 <%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
 
-<div class="pt-[25vh] flex flex-col content-center items-center">
-  <div class="shadow-md p-6">
+<div class="w-screen bg-voltwerk-yellow h-[20vh]"></div>
+<div class="pt-[15vh] flex flex-col content-center items-center">
+  <div class="input-border p-6">
     <div>
       <%= form_with url: session_path do |form| %>
-        <div class="border-2 rounded-b-md rounded-t-md">
-          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address]%><br>
+        <div class="input-border mt-2">
+          <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address], class: "w-full p-3"%><br>
         </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2">
-          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 20 %><br>
+        <div class="input-border mt-2">
+          <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 20, class: "w-full p-3" %><br>
         </div>
-        <div class="border-2 rounded-b-md rounded-t-md mt-2 hover:bg-gray-300 text-center">
-          <%= form.submit "Sign in" %>
+        <div class="light-button-style hover:bg-voltwerk-yellow">
+          <%= form.submit "Sign in", class: "w-full font-bold p-3 cursor-pointer"%>
         </div>
       <% end %>
       <br>
     </div>
     <div>
-      <%= link_to "Forgot password?", new_password_path %>
-      <%= link_to "admin", admin_index_path %>
-      <%= link_to "dashboard", dashboard_index_path %>
+      <%= link_to "Forgot password?", new_password_path%>
     </div>
   </div>
 </div>

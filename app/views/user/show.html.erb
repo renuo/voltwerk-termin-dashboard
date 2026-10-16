@@ -1,24 +1,24 @@
-<h1 class="text-5xl pt-[2.5vh] pb-[2.5vh] pl-6 bg-amber-500">you are user <%= @user.handle %></h1>
+<h1 class="hidden md:block md:text-5xl md:pt-[2.5vh] md:pb-[2.5vh] md:pl-6 md:bg-voltwerk-yellow">you are user <%= @user.handle %></h1>
 
-<div class="pl-8 h-full">
-  <div class="flex flex-row">
-    <div class="min-w-1/12 mr-5">
-      <div class="border-2 rounded-b-md rounded-t-md p-0.5 hover:bg-gray-300 text-center">
-        <%= link_to "dashboard", dashboard_index_path %>
+<div class="md:pl-8 h-full">
+  <div class="sm:hidden md:flex md:flex-row">
+
+    <div class="max-sm:flex max-sm:flex-row max-sm:bg-voltwerk-yellow">
+      <h1 class="md:hidden text-5xl pt-[2.5vh] pb-[2.5vh] pl-6">you are user <%= @user.handle %></h1>
+
+      <div class=" max-sm:flex max-sm:flex-col">
+        <div class="mb-2 h-[40%]">
+          <%= link_to "dashboard", dashboard_index_path, class: "dark-button-style hover:bg-voltwerk-yellow h-full w-full "%>
+        </div>
+
+        <div class="h-[40%]">
+          <%= button_to "Sign Out", session_path, method: :delete, class: "dark-button-style hover:bg-voltwerk-yellow h-[100%] w-[100%]"%>
+        </div>
       </div>
-      <div class="border-2 rounded-b-md rounded-t-md p-0.5 hover:bg-gray-300 text-center mt-1.5">
-        <% if authenticated? %>
-          <%= button_to "Sign Out", session_path, method: :delete  %>
-        <% else %>
-          <%= link_to "Sign In", new_session_path %>
-        <% end %>
-      </div>
+
     </div>
-    <div class=" calendar-box mr-20 border-2 rounded-b-md rounded-t-md w-full h-[80vh]"></div>
+
+    <div class=" calendar-box mr-20 md:ml-2 border-2 rounded-b-md rounded-t-md w-full h-[80vh]"></div>
+
   </div>
 </div>
-
-
-
-
-
