@@ -24,6 +24,7 @@ global_job_config:
       - source .semaphore/bin/cache_restore rails
       - bundle config set deployment 'true'
       - bundle config set path 'vendor/bundle'
+      - bundle config set clean 'true'
       - bundle install --retry 3
 
 blocks:
