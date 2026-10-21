@@ -84,4 +84,8 @@ Rails.application.configure do
   config.action_controller.action_on_unpermitted_parameters = :raise
   config.i18n.raise_on_missing_translations = :strict
   config.generators(&:apply_rubocop_autocorrect_after_generate!)
+
+  # Use Solid Queue in Development.
+  config.active_job.queue_adapter = :solid_queue
+  # config.solid_queue.connects_to = { database: { writing: :queue } }
 end
